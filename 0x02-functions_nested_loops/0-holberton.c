@@ -1,21 +1,17 @@
-#include"holberton.h_putchar.c"
-
+#include "main.h"
 /**
  * main - Entry point
- *
- * Return: Always 0 (Success)
+ * Return: nothing, return void
  */
 int main(void)
 {
-_putchar('H');
-_putchar('o');
-_putchar('l');
-_putchar('b');
-_putchar('e');
-_putchar('r');
-_putchar('t');
-_putchar('o');
-_putchar('n');
+int i; /*Declaring statements*/
+char string[9] = "Holberton"; /*Arrays*/
+
+for (i = 0 ; i < 9 ; i++) /*Start for*/
+{
+_putchar(string[i]);/*display word*/
+} /*End for*/
 _putchar('\n');
 return (0);
 }
