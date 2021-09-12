@@ -1,53 +1,113 @@
 #include "main.h"
 
-/**
- *infinite_add - concatenates two strings
- *@n1: number 1
- *@n2: number 2
- *@r: pointer that contains sum of numbers
- *@size_r: size of buffer that contains sum of numbers
- *Return: the pointer with new number
- */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
-{
-int longn1;
-int longn2;
-int bigger;
-int op;
-int ad;
+#include <stdio.h>
 
-for (longn1 = 0; n1[longn1] != '\0'; longn1++)
-for (longn2 = 0; n2[longn2] != '\0'; longn2++)
-if (longn1 >= longn2)
-bigger = longn1;
+
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+
+int main(void)
+
+{
+
+char *n = "1234567892434574367823574575678477685785645685876876774586734734563456453743756756784458";
+
+char *m = "9034790663470697234682914569346259634958693246597324659762347956349265983465962349569346";
+
+char r[100];
+
+char r2[10];
+
+char r3[11];
+
+char *res;
+
+
+
+res = infinite_add(n, m, r, 100);
+
+if (res == 0)
+
+{
+
+printf("Error\n");
+
+}
+
 else
-bigger = longn2;
-if (size_r <= (bigger + 1))
+
+{
+
+printf("%s + %s = %s\n", n, m, res);
+
+}
+
+n = "1234567890";
+
+m = "1";
+
+res = infinite_add(n, m, r2, 10);
+
+if (res == 0)
+
+{
+
+printf("Error\n");
+
+}
+
+else
+
+{
+
+printf("%s + %s = %s\n", n, m, res);
+
+}
+
+n = "999999999";
+
+m = "1";
+
+res = infinite_add(n, m, r2, 10);
+
+if (res == 0)
+
+{
+
+printf("Error\n");
+
+}
+
+else
+
+{
+
+printf("%s + %s = %s\n", n, m, res);
+
+}
+
+res = infinite_add(n, m, r3, 11);
+
+if (res == 0)
+
+{
+
+printf("Error\n");
+
+}
+
+else
+
+{
+
+printf("%s + %s = %s\n", n, m, res);
+
+}
+
 return (0);
-while (bigger > 0)
-{
-if (longn1 >= 0 && longn2 >= 0)
-{
-op = (*(n1 + longn1) - '0') + (*(n2 + longn2) - '0') + ad;
-}
-else
-{
-if (longn1 < 0 && longn2 >= 0)
-op = (*(n2 + longn2) - '0') + ad;
-else
-{
-if (longn1 >= 0 && longn2 < 0)
-op = (*(n1 + longn1) - '0') + ad;
-}
-}
-*(r + bigger) = (op % 10) + '0';
-ad = op / 10;
-longn1--;
-longn2--;
-bigger--;
-}
-if (*(r + 0) == 0)
-return (r + 1);
-r[bigger + 1] = '\n';
-return (r);
+
 }
