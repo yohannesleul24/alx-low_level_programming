@@ -27,7 +27,7 @@ head->prev = new;
 new->next = head;
 new->prev = NULL;
 head = new;
-n = dlistint_len(head);
+n = print_dlistint(head);
 printf("-> %lu elements\n", n);
 free(new);
 return (EXIT_SUCCESS);
